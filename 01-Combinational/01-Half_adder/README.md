@@ -69,6 +69,6 @@ endmodule
 | half_adder_tb.v | Testbench with all 4 input combinations |
 
 ## Simulation
-<img width="1530" height="567" alt="image" src="https://github.com/user-attachments/assets/62d595d1-a96d-4327-bb37-9d01b0d32e43" />
+<img width="1837" height="504" alt="image" src="https://github.com/user-attachments/assets/65848ff1-1221-47c3-a458-9a908312b167" />
 
 Simulated using EDA Playground. All 4 input combinations verified.
