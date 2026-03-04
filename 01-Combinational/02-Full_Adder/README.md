@@ -14,6 +14,19 @@ and Cin, and produces a Sum and Carry Out.
 | sum | output | XOR of a, b and cin |
 | cout | output | Carry Out to next stage |
 
+## Truth Table
+
+| A | B | Cin | Sum | Cout |
+|---|---|-----|-----|------|
+| 0 | 0 |  0  |  0  |  0   |
+| 0 | 0 |  1  |  1  |  0   |
+| 0 | 1 |  0  |  1  |  0   |
+| 0 | 1 |  1  |  0  |  1   |
+| 1 | 0 |  0  |  1  |  0   |
+| 1 | 0 |  1  |  0  |  1   |
+| 1 | 1 |  0  |  0  |  1   |
+| 1 | 1 |  1  |  1  |  1   |
+
 ## Logic
 ```
 Sum  = A ^ B ^ Cin
