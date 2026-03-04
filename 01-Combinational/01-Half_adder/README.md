@@ -11,6 +11,15 @@ This circuit adds two single bits and gives a Sum and a Carry output.
 | sum | output | XOR of a and b |
 | cout | output | AND of a and b (Carry Out) |
 
+## Truth Table
+
+| A | B | Sum | Cout |
+|---|---|-----|------|
+| 0 | 0 |  0  |  0   |
+| 0 | 1 |  1  |  0   |
+| 1 | 0 |  1  |  0   |
+| 1 | 1 |  0  |  1   |
+
 ## Logic
 ```
 Sum  = A ^ B
