@@ -91,7 +91,7 @@ module full_adder_tb();
   end
   //4. Observation
   initial begin
-    $monitor("%4t | %b %b | %b   %b |", $time, a, b, cin, sum, cout);
+    $monitor("%4t | %b %b %b | %b   %b |", $time, a, b, cin, sum, cout);
   end
 endmodule
 ```
