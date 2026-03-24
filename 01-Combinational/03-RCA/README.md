@@ -155,6 +155,9 @@ endmodule
 ```
 
 ## Simulation
-
+Simulation for 4-Bit RCA
+<img width="1874" height="534" alt="image" src="https://github.com/user-attachments/assets/40816b99-60c0-49f6-a733-f3b883912df2" />
+Simulation for N-Bit RCA
+<img width="1845" height="560" alt="image" src="https://github.com/user-attachments/assets/ede6a783-dc19-4a45-8574-0337cdd7e7cb" />
 
 Simulated using EDA Playground. Overflow behavior verified via cout signal.
