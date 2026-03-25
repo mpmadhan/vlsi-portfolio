@@ -176,10 +176,12 @@ endmodule
 ## Simulation
 
 ### mux_2x1
-<img width="792" height="416" alt="image" src="https://github.com/user-attachments/assets/0026412f-d364-469c-b738-61a3e8e4ab91" />
+<img width="792" height="316" alt="image" src="https://github.com/user-attachments/assets/0026412f-d364-469c-b738-61a3e8e4ab91" />
 <img width="1845" height="405" alt="image" src="https://github.com/user-attachments/assets/09480eca-e1e7-4b6a-a777-f8d75dc20330" />
 
 ### mux_4x1
-<!-- paste simulation screenshot here -->
+<img width="696" height="309" alt="image" src="https://github.com/user-attachments/assets/36edf528-31d1-4dc5-937f-9dddc087b08d" />
+<img width="1842" height="407" alt="image" src="https://github.com/user-attachments/assets/9363cd71-8c16-4118-bfec-a55b0474a20a" />
+
 
 Simulated using EDA Playground. Select line routing verified for all combinations.
