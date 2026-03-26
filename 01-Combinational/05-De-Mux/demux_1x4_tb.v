@@ -11,15 +11,11 @@ module demux_1x4_tb();
   initial begin
     //3.1 Waveform
     $dumpfile("demux_1x4_tb.vcd");
-    $dumpfile(0,demux_1x4_tb);
+    $dumpvars(0,demux_1x4_tb);
     //3.2 Display
     $display("Time | In Sel | Y0 Y1 Y2 Y3");
     $display("-----|--------|------------");
     //3.3 Stimulus
-    in=0; sel=2'b00; #10;
-    in=0; sel=2'b01; #10;
-    in=0; sel=2'b10; #10;
-    in=0; sel=2'b11; #10;
     in=1; sel=2'b00; #10;
     in=1; sel=2'b01; #10;
     in=1; sel=2'b10; #10;
