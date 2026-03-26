@@ -10,6 +10,7 @@ module demux_1x4(
       2'b01 : {y0,y1,y2,y3} = {1'b0,in,2'b0};
       2'b10 : {y0,y1,y2,y3} = {2'b0,in,1'b0};
       2'b11 : {y0,y1,y2,y3} = {3'b0,in};
+      default: {y0,y1,y2,y3} = 4'b0;
     endcase
   end
 endmodule
