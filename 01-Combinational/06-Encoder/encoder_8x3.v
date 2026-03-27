@@ -14,7 +14,7 @@ module encoder_8x3(
   input [7:0] in,
   output [2:0] out
 );
-  assign Y2 = (I7 | I6 | I5 | I4);
-  assign Y1 = (I2 | I3 | I6 | I7);
-  assign Y0 = (I1 | I3 | I5 | I7);
+  assign out[2] = (I7 | I6 | I5 | I4);
+  assign out[1] = (I2 | I3 | I6 | I7);
+  assign out[0] = (I1 | I3 | I5 | I7);
 endmodule
