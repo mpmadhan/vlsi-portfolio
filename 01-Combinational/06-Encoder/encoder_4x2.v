@@ -10,6 +10,6 @@ module encoder_4x2(
   input [3:0] i,
   output [1:0] y
 );
-  assign y[1] = i[2] | i[3]; //Y1 is high when I2 and I3 are high
-  assign y[0] = i[1] | i[3]; //Y0 is high when I1 and I3 are high
+  assign y[1] = i[2] | i[3]; //Y1 is high when I2 or I3 are high
+  assign y[0] = i[1] | i[3]; //Y0 is high when I1 or I3 are high
 endmodule
