@@ -6,11 +6,11 @@ LSB to MSB. Two implementations are provided here.
 
 ## Modules
 
-### rca_4bit — Structural (4-bit)
+### rca_4bit - Structural (4-bit)
 Built by instantiating four Full Adders explicitly. Shows exactly how carry
 propagates through each bit position.
 
-### rca_nbit — Parameterized (N-bit)
+### rca_nbit - Parameterized (N-bit)
 A single-line dataflow implementation that works for any bit width.
 Default width is 4 - change the parameter to scale to 8, 16, or 32 bits.
 
