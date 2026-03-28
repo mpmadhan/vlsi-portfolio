@@ -1,16 +1,16 @@
 # Multiplexer (MUX)
 
-A Multiplexer is a data selector — it picks one of many inputs and forwards it
+A Multiplexer is a data selector - it picks one of many inputs and forwards it
 to a single output based on a select signal. Think of it as a controlled switch
 that routes data from one of N sources to a single destination.
 
 ## Modules
 
-### mux_2x1 — 2:1 Multiplexer
+### mux_2x1 - 2:1 Multiplexer
 Selects between two inputs using a single select line.
 Implemented using gate-level logic.
 
-### mux_4x1 — 4:1 Multiplexer
+### mux_4x1 - 4:1 Multiplexer
 Selects between four inputs using two select lines.
 Implemented using a case statement inside an always block.
 
