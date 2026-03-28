@@ -177,9 +177,12 @@ endmodule
 ## Simulation
 
 ### encoder_4x2
-<!-- paste screenshot here -->
+<img width="705" height="256" alt="image" src="https://github.com/user-attachments/assets/ae69da56-9f3c-44d4-ac94-84d423aca1f0" />
+<img width="1850" height="414" alt="image" src="https://github.com/user-attachments/assets/7c3a854b-f7fa-40fb-bbb4-a82f22ddce20" />
 
 ### encoder_8x3
-<!-- paste screenshot here -->
+<img width="754" height="395" alt="image" src="https://github.com/user-attachments/assets/ce6bd639-92bb-4844-babc-afe3a27e864b" />
+<img width="1844" height="564" alt="image" src="https://github.com/user-attachments/assets/541477ce-50bf-475b-9c76-7edfd698a6de" />
+
 
 Simulated using EDA Playground. One-hot inputs verified against expected binary outputs.
