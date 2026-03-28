@@ -1,16 +1,16 @@
 # DeMultiplexer (DEMUX)
 
-A DeMultiplexer is the opposite of a MUX — it takes one input and routes it to
-one of many outputs based on a select signal. Think of it as a switch that
+A DeMultiplexer is the opposite of a MUX - it takes one input and routes it to
+one of many outputs based on a select signal. It is similar to a switch that
 directs incoming data to a specific destination.
 
 ## Modules
 
-### demux_1x2 — 1:2 DeMultiplexer
+### demux_1x2 - 1:2 DeMultiplexer
 Routes one input to one of two outputs using a single select line.
 Implemented using gate-level assign statements.
 
-### demux_1x4 — 1:4 DeMultiplexer
+### demux_1x4 - 1:4 DeMultiplexer
 Routes one input to one of four outputs using two select lines.
 Implemented using a case statement with concatenation for clean output assignment.
 
