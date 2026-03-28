@@ -8,16 +8,29 @@ I3 I2 I1 I0 | Y1 Y0
 */
 module priority_encoder_4x2(
   input [3:0] in,
-  output [1:0] out
+  output reg [1:0] out,
+  output reg valid
 );
   always @(*) begin
-    if(in[3])
-      out[1:0]=1;
-    else if(in[2])
-      out[1]=1; out[0]=0;
-    else if(in[1])
-      out[1]=0; out[0]=1;
-    else if(in[0])
-      out[1:0]=0;
+    if(in[3]) begin
+      out=2'b11;
+      valid = 1;
+    end
+    else if(in[2]) begin
+      out= 2'b10;
+      valid = 1;
+    end
+    else if(in[1]) begin
+      out=2'b01;
+      valid =1;
+    end
+    else if(in[0]) begin
+      out=2'b00;
+      valid =1;
+    end
+    else begin
+      out=2'bxx;
+      valid =0;
+    end
   end
 endmodule
