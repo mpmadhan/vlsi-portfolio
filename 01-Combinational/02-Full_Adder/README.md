@@ -1,6 +1,6 @@
 # Full Adder
 
-A Full Adder extends the Half Adder by accepting a Carry In — making it possible
+A Full Adder extends the Half Adder by accepting a Carry In - making it possible
 to chain multiple adders together for multi-bit addition. It adds three bits: A, B,
 and Cin, and produces a Sum and Carry Out.
 
