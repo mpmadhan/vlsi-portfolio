@@ -1,17 +1,16 @@
 # Encoder
 
 An Encoder converts an active input line into its binary representation.
-It takes 2ⁿ input lines (only one active at a time) and produces an n-bit
-binary code indicating which input is active. Think of it like a keyboard —
-press one key, get a binary code.
+It takes 2ⁿ input lines (only one is active at a time) and it produces an n-bit
+binary code output indicating which input is currently active.
 
 ## Modules
 
-### encoder_4x2 — 4:2 Encoder
+### encoder_4x2 - 4:2 Encoder
 4 inputs, 2-bit binary output.
 Implemented using OR gate assign statements.
 
-### encoder_8x3 — 8:3 Encoder
+### encoder_8x3 - 8:3 Encoder
 8 inputs, 3-bit binary output.
 Implemented using OR gate assign statements.
 
