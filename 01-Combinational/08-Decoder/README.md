@@ -183,13 +183,14 @@ endmodule
 
 ### decoder_2x4
 
-<img width="360" height="159" alt="image" src="https://github.com/user-attachments/assets/b285e5f6-bdd1-4451-a93c-6034c483f53b" />
+<img width="344" height="194" alt="image" src="https://github.com/user-attachments/assets/6bd58b33-b828-4524-a0c2-0298bddc126e" />
+
 
 <img width="1844" height="419" alt="image" src="https://github.com/user-attachments/assets/7dfc4e65-7387-433f-b14d-4a3e6206deed" />
 
 ### decoder_3x8
 
-<img width="737" height="391" alt="image" src="https://github.com/user-attachments/assets/e7fd383e-68e2-4470-86ac-613c7b8e07bf" />
+<img width="337" height="191" alt="image" src="https://github.com/user-attachments/assets/e7fd383e-68e2-4470-86ac-613c7b8e07bf" />
 
 <img width="1844" height="578" alt="image" src="https://github.com/user-attachments/assets/2949fa8c-7c1e-4c9e-a516-bc3969a96105" />
 
