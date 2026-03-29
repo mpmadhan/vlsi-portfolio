@@ -1,19 +1,14 @@
 # Decoder
 
-A Decoder takes an n-bit binary input and activates exactly one of 2ⁿ output lines
-corresponding to that binary value. It is the exact opposite of an encoder —
-where an encoder tells you which input is active, a decoder activates the output
-that corresponds to the binary address given.
-
-Real world use case — memory address decoding. Give it a binary address,
-it selects exactly that one memory location.
+A Decoder takes an n-bit binary input and activates exactly one of 2^n output lines
+corresponding to that binary value. 
 
 ## Modules
 
-### decoder_2x4 — 2:4 Decoder
+### decoder_2x4 - 2:4 Decoder
 2-bit binary input, 4 one-hot output lines.
 
-### decoder_3x8 — 3:8 Decoder
+### decoder_3x8 - 3:8 Decoder
 3-bit binary input, 8 one-hot output lines.
 
 Both implemented using a case statement inside an always block.
