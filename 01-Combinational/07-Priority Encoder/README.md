@@ -1,12 +1,12 @@
 # Priority Encoder
 
-A Priority Encoder solves the limitation of a basic encoder — when multiple inputs
+A Priority Encoder solves the limitation of a basic encoder - when multiple inputs
 are active simultaneously, it outputs the binary code of the highest priority input
 (highest index wins). A valid output flag indicates whether any input is active at all.
 
 ## Module
 
-### priority_encoder_4x2 — 4:2 Priority Encoder
+### priority_encoder_4x2 - 4:2 Priority Encoder
 4 inputs with priority, 2-bit binary output, 1-bit valid flag.
 Implemented using if-else if chain inside an always block.
 
@@ -135,4 +135,4 @@ endmodule
 <img width="1847" height="444" alt="image" src="https://github.com/user-attachments/assets/c0885c37-2ebf-47d4-91e6-7d7c7eef5624" />
 
 Simulated using EDA Playground. All 16 input combinations tested via for loop.
-Priority behavior verified — highest active input index always wins.
+Priority behavior verified - highest active input index always wins.
