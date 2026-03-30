@@ -163,13 +163,13 @@ endmodule
 
 ### parity_generator
 
-<img width="776" height="568" alt="image" src="https://github.com/user-attachments/assets/229437ae-5078-40a2-aa96-f46c62672597" />
+<img width="376" height="468" alt="image" src="https://github.com/user-attachments/assets/229437ae-5078-40a2-aa96-f46c62672597" />
 
 <img width="1912" height="381" alt="image" src="https://github.com/user-attachments/assets/ff7b9b48-7299-4d75-ba71-0df06da9d4f0" />
 
 ### parity_checker
 
-<img width="705" height="563" alt="image" src="https://github.com/user-attachments/assets/c6c048a3-e5d0-4b58-b12a-a62999a6b194" /> <img width="612" height="558" alt="image" src="https://github.com/user-attachments/assets/11d58700-701a-42bd-9aef-9b6bcc7dfe51" />
+<img width="305" height="463" alt="image" src="https://github.com/user-attachments/assets/c6c048a3-e5d0-4b58-b12a-a62999a6b194" /> <img width="312" height="458" alt="image" src="https://github.com/user-attachments/assets/11d58700-701a-42bd-9aef-9b6bcc7dfe51" />
 
 
 <img width="1919" height="404" alt="image" src="https://github.com/user-attachments/assets/0ef929e9-71d0-464d-9caf-2dc0d777b7db" />
