@@ -1,18 +1,18 @@
 //Testbench for 4-Bit Parity Checker
 `timescale 1ns/1ps
-module parity_checker_tb();
+module parity_checker_4bit_tb();
   //1. Signal Declaration
   reg [3:0] d;
   reg parity;
   wire error;
   integer i,j;
   //2. Dut Instantiation
-  parity_checker dut(.d(d),.parity(parity),.error(error));
+  parity_checker_4bit dut(.d(d),.parity(parity),.error(error));
   //3. Waveform + Stimulus
   initial begin
     //3.1 Waveform
-    $dumpfile("parity_checker_tb.vcd");
-    $dumpvars(0,parity_checker_tb);
+    $dumpfile("parity_checker_4bit_tb.vcd");
+    $dumpvars(0,parity_checker_4bit_tb);
     //3.2 Display
     $display("Time |  D  Parity | Error");
     $display("-----|------------|------");
