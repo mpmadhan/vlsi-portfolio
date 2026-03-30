@@ -7,7 +7,7 @@ module parity_generator_nbit_tb();
   wire parity;
   integer i;
   //2. DUT instantiation
-  parity_generator_nbit dut(.d(d),.parity(parity));
+  parity_generator_nbit #(.N(N)) dut(.d(d),.parity(parity));
   //3. waveform + Stimulus
   initial begin
     //3.1 Waveform
