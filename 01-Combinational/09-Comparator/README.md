@@ -180,7 +180,7 @@ endmodule
 
 ### comparator_4bit
 
-<img width="250" height="450" alt="image" src="https://github.com/user-attachments/assets/7861c377-6e4e-4dc9-a368-c096f8adb940" /> <img width="250" height="300" alt="image" src="https://github.com/user-attachments/assets/030734ac-491b-4621-a8c7-1e1848f00c29" /> 
+<img width="250" height="650" alt="image" src="https://github.com/user-attachments/assets/7861c377-6e4e-4dc9-a368-c096f8adb940" /> <img width="250" height="300" alt="image" src="https://github.com/user-attachments/assets/030734ac-491b-4621-a8c7-1e1848f00c29" /> 
 
 <img width="1911" height="566" alt="image" src="https://github.com/user-attachments/assets/eee0395a-59ca-45df-a3c0-60e4df576da9" />
 
