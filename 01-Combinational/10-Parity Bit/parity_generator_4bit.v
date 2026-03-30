@@ -1,5 +1,5 @@
 //RTL Code for 4-Bit Parity Generator Circuit
-module parity_generator(
+module parity_generator_4bit(
   input [3:0] d,
   output parity
 );
