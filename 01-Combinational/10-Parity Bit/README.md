@@ -175,4 +175,4 @@ endmodule
 <img width="1919" height="404" alt="image" src="https://github.com/user-attachments/assets/0ef929e9-71d0-464d-9caf-2dc0d777b7db" />
 
 Simulated using EDA Playground. Generator verified across all 16 data combinations.
-Checker verified across all 32 combinations — error detection confirmed.
+Checker verified across all 32 combinations - error detection confirmed.
