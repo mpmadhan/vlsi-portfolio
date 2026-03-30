@@ -234,7 +234,7 @@ module parity_generator_nbit_tb();
   wire parity;
   integer i;
   //2. DUT instantiation
-  parity_generator_nbit dut(.d(d),.parity(parity));
+  parity_generator_nbit #(.N(N)) dut(.d(d),.parity(parity));
   //3. waveform + Stimulus
   initial begin
     //3.1 Waveform
@@ -300,7 +300,7 @@ endmodule
 
 <img width="1912" height="381" alt="image" src="https://github.com/user-attachments/assets/ff7b9b48-7299-4d75-ba71-0df06da9d4f0" />
 
-### parity_checker_4bit & parity_generator_nbit
+### parity_checker_4bit & parity_checker_nbit
 
 <img width="305" height="463" alt="image" src="https://github.com/user-attachments/assets/c6c048a3-e5d0-4b58-b12a-a62999a6b194" /> <img width="312" height="458" alt="image" src="https://github.com/user-attachments/assets/11d58700-701a-42bd-9aef-9b6bcc7dfe51" />
 
