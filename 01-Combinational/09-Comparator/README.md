@@ -5,10 +5,10 @@ whether A is equal to, greater than, or less than B.
 
 ## Modules
 
-### comparator_1bit — 1-bit Comparator
+### comparator_1bit - 1-bit Comparator
 Compares two single bits using gate-level logic.
 
-### comparator_4bit — 4-bit Comparator
+### comparator_4bit - 4-bit Comparator
 Compares two 4-bit numbers using Verilog comparison operators.
 
 ## Ports
@@ -174,11 +174,13 @@ endmodule
 
 ### comparator_1bit
 
+<img width="418" height="382" alt="image" src="https://github.com/user-attachments/assets/452a4910-e114-4c13-a460-58c31fa5de8f" />
+
+<img width="1915" height="341" alt="image" src="https://github.com/user-attachments/assets/4995b7cd-9b71-4911-93ae-b52b30d5a470" />
 
 ### comparator_4bit
-<img width="250" height="300" alt="image" src="https://github.com/user-attachments/assets/7861c377-6e4e-4dc9-a368-c096f8adb940" /> <img width="250" height="300" alt="image" src="https://github.com/user-attachments/assets/030734ac-491b-4621-a8c7-1e1848f00c29" /> <img width="250" height="300" alt="image" src="https://github.com/user-attachments/assets/46036236-1eaa-44a3-b788-bae0fcb0ed4a" /> <img width="250" height="300" alt="image" src="https://github.com/user-attachments/assets/5885d2b0-3dee-4b74-931f-4a7170ada5eb" />
 
-
+<img width="250" height="450" alt="image" src="https://github.com/user-attachments/assets/7861c377-6e4e-4dc9-a368-c096f8adb940" /> <img width="250" height="300" alt="image" src="https://github.com/user-attachments/assets/030734ac-491b-4621-a8c7-1e1848f00c29" /> 
 
 <img width="1911" height="566" alt="image" src="https://github.com/user-attachments/assets/eee0395a-59ca-45df-a3c0-60e4df576da9" />
 
