@@ -1,5 +1,5 @@
 //RTL Code for 4-bit Parity Checker
-module parity_checker(
+module parity_checker_4bit(
   input [3:0] d,
   input parity,
   output error
