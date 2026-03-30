@@ -1,17 +1,17 @@
 //Testbench for 4-Bit Parity Generator
 `timescale 1ns/1ps
-module parity_generator_tb();
+module parity_generator_4bit_tb();
   //1. Signal declaration
   reg [3:0] d;
   wire parity;
   integer i;
   //2. DUT instantiation
-  parity_generator dut(.d(d),.parity(parity));
+  parity_generator_4bit dut(.d(d),.parity(parity));
   //3. waveform + Stimulus
   initial begin
     //3.1 Waveform
-    $dumpfile ("parity_generator_tb.vcd");
-    $dumpvars (0,parity_generator_tb);
+    $dumpfile ("parity_generator_4bit_tb.vcd");
+    $dumpvars (0,parity_generator_4bit_tb);
     //3.2 Display
     $display("Time |  D  | Parity");
     $display("-----|-----|-------");
