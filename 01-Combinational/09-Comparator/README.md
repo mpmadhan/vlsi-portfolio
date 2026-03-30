@@ -176,7 +176,7 @@ endmodule
 
 
 ### comparator_4bit
-<img width="687" height="594" alt="image" src="https://github.com/user-attachments/assets/7861c377-6e4e-4dc9-a368-c096f8adb940" /> <img width="331" height="616" alt="image" src="https://github.com/user-attachments/assets/030734ac-491b-4621-a8c7-1e1848f00c29" /> <img width="324" height="620" alt="image" src="https://github.com/user-attachments/assets/46036236-1eaa-44a3-b788-bae0fcb0ed4a" /> <img width="337" height="610" alt="image" src="https://github.com/user-attachments/assets/5885d2b0-3dee-4b74-931f-4a7170ada5eb" />
+<img width="250" height="300" alt="image" src="https://github.com/user-attachments/assets/7861c377-6e4e-4dc9-a368-c096f8adb940" /> <img width="250" height="300" alt="image" src="https://github.com/user-attachments/assets/030734ac-491b-4621-a8c7-1e1848f00c29" /> <img width="250" height="300" alt="image" src="https://github.com/user-attachments/assets/46036236-1eaa-44a3-b788-bae0fcb0ed4a" /> <img width="250" height="300" alt="image" src="https://github.com/user-attachments/assets/5885d2b0-3dee-4b74-931f-4a7170ada5eb" />
 
 
 
