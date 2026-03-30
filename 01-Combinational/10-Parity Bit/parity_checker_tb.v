@@ -23,6 +23,7 @@ module parity_checker_tb();
         parity = j; #10;
       end
     end
+    $finish;
   end
   //4. Observation
   initial begin
