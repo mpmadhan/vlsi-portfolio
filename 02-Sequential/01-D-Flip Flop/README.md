@@ -2,19 +2,19 @@
 
 A D Flip Flop is a 1-bit memory element that captures the value of input D
 at the rising edge of the clock and holds it at output Q until the next rising
-edge. It is the fundamental building block of all sequential circuits —
+edge. It is the fundamental building block of all sequential circuits -
 registers, counters, shift registers, and FSMs are all built from flip flops.
 
-Two versions are implemented here — synchronous reset and asynchronous reset.
+Two versions are implemented here - synchronous reset and asynchronous reset.
 
 ## Modules
 
-### dff_sync — Synchronous Reset
+### dff_sync - Synchronous Reset
 Reset is sampled only at the rising edge of the clock.
 The output Q is updated to 0 only when reset is high at a clock edge.
 
-### dff_async — Asynchronous Reset
-Reset is independent of the clock — as soon as reset goes high,
+### dff_async - Asynchronous Reset
+Reset is independent of the clock - as soon as reset goes high,
 output Q immediately goes to 0 regardless of the clock state.
 
 ## Ports
@@ -174,10 +174,16 @@ endmodule
 ## Simulation
 
 ### dff_sync
-<!-- paste screenshot here -->
+
+<img width="521" height="428" alt="image" src="https://github.com/user-attachments/assets/53abfbab-39e7-43d7-b30c-5ccb3ca866df" />
+
+<img width="1907" height="327" alt="image" src="https://github.com/user-attachments/assets/e819c2da-e276-4de5-96be-5b1381f63ab7" />
 
 ### dff_async
-<!-- paste screenshot here -->
+
+<img width="675" height="479" alt="image" src="https://github.com/user-attachments/assets/38a39ce4-68a7-4bd4-b38f-521ef9a5546f" />
+
+<img width="1913" height="317" alt="image" src="https://github.com/user-attachments/assets/75ac7911-e6fd-43ad-8437-c1cec5fa5c24" />
 
 Simulated using EDA Playground. Reset behavior verified for both
 synchronous and asynchronous versions. Output Q confirmed to hold
