@@ -1,7 +1,7 @@
 # JK Flip Flop
 
 A JK Flip Flop is an improved version of the SR Flip Flop that eliminates
-the invalid state problem. It has two inputs — J (Set) and K (Reset) — and
+the invalid state problem. It has two inputs - J (Set) and K (Reset) - and
 introduces a toggle state when both J and K are high simultaneously, which
 makes it more versatile than the SR FF.
 
@@ -131,5 +131,5 @@ endmodule
 
 <img width="1919" height="365" alt="image" src="https://github.com/user-attachments/assets/e1c081a1-e6b8-4795-94b7-e1ad6e8b1e63" />
 
-Simulated using EDA Playground. All four states verified —
+Simulated using EDA Playground. All four states verified -
 Hold, Set, Reset and Toggle.
