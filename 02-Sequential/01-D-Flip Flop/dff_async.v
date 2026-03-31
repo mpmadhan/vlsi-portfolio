@@ -3,7 +3,7 @@ module dff_async(
   input clk,d,reset,
   output reg q
 );
-  always @(posedge clk | posedge reset) begin
+  always @(posedge clk or posedge reset) begin
     if(reset)
       q<=0;
     else
