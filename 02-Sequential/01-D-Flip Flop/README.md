@@ -175,13 +175,13 @@ endmodule
 
 ### dff_sync
 
-<img width="521" height="428" alt="image" src="https://github.com/user-attachments/assets/53abfbab-39e7-43d7-b30c-5ccb3ca866df" />
+<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/53abfbab-39e7-43d7-b30c-5ccb3ca866df" />
 
 <img width="1907" height="327" alt="image" src="https://github.com/user-attachments/assets/e819c2da-e276-4de5-96be-5b1381f63ab7" />
 
 ### dff_async
 
-<img width="675" height="479" alt="image" src="https://github.com/user-attachments/assets/38a39ce4-68a7-4bd4-b38f-521ef9a5546f" />
+<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/38a39ce4-68a7-4bd4-b38f-521ef9a5546f" />
 
 <img width="1913" height="317" alt="image" src="https://github.com/user-attachments/assets/75ac7911-e6fd-43ad-8437-c1cec5fa5c24" />
 
