@@ -9,7 +9,7 @@ Qnext = T^Q
 */
 module tff(
   input clk, t, reset,
-  output q
+  output reg q
 );
   always @(posedge clk) begin
     if(reset)
