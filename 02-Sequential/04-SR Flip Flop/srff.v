@@ -14,7 +14,7 @@ Qnext = S | (R'.Q)
 */
 module srff(
   input clk, s, r, reset,
-  output q
+  output reg q
 );
   always @(posedge clk) begin
     if(reset)
