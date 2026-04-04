@@ -2,7 +2,7 @@
 module pipo_4bit(
   input clk, reset,
   input [3:0] d,
-  output [3:0] q
+  output reg [3:0] q
 );
   always @(posedge clk) begin
     if(reset)
