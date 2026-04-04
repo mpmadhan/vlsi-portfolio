@@ -21,7 +21,7 @@ module pipo_4bit_tb();
     $display("Time |   D    Rst |   Q   ");
     $display("-----|------------|-------");
     //4.3 Stimulus
-    d=4'b0000; reset=1; #10; //Reset High
+    d=4'b0000; reset=1; #12; //Reset High
     d=4'b0011; reset=1; #10; //Reset still High
     d=4'b0011; reset=0; #10; //Reset low
     d=4'b1010; reset=0; #10; //Input change
