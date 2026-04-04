@@ -1,5 +1,5 @@
 //RTL Code for 4-Bit Parallel In Parallel Out Shift Register
-module pipo(
+module pipo_4bit(
   input clk, reset,
   input [3:0] d,
   output [3:0] q
