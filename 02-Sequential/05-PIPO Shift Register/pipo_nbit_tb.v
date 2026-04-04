@@ -22,11 +22,12 @@ module pipo_nbit_tb();
     $display(" Time |    D   Rst | Q ");
     $display("------|------------|---");
     //4.3 Stimulus
-    d=4'b0001; reset=1; #13; //Reset high
-    d=4'b0001; reset=0; #10; //Reset low
-    d=4'b0101; reset=0; #10; //Input change
-    reset=1; #10;            //Reset High
-    reset=0; #10;            //Reset low
+    d=0; reset=1; #12; //All data bits low, reset High
+    d=1; reset=0; #10; //LSB is set high
+    d=(1<<(N-1)); #10; //MSB set high
+    d='1; #10;         //All bits high
+    reset=1; #10;      //Reset High
+    reset=0; #10;      //Reset Low
     $finish;
   end
   //5. Observation
