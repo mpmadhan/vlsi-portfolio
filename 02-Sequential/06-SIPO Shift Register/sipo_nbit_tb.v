@@ -22,7 +22,7 @@ module sipo_nbit_tb();
     $display(" Time | D Rst | Q");
     $display("------|-------|---");
     //4.3 Stimulus
-    d=0;reset=1; #10; //reset high
+    d=0;reset=1; #12; //reset high
     d=1;reset=0; #10; //reset low
     d=0; #10;         //input change
     d=1; #10;         //input change
