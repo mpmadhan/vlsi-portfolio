@@ -5,12 +5,12 @@ A collection of RTL designs and verification environments built as part of my jo
 ## Contents
 | Folder | Topic |
 |---|---|
-| 01_combinational | Logic gates, MUX, adders, encoders |
-| 02_sequential | Flip-flops, counters, FSMs |
-| 03_rtl_designs | Full RTL modules |
-| 04_systemverilog | SV constructs and features |
-| 05_verification | Testbenches, SVA, UVM |
-| 06_projects | End-to-end projects |
+| 01-Combinational | Logic gates, MUX, adders, encoders |
+| 02-Sequential | Flip-flops, counters, FSMs |
+| 03-RTL_Designs | Full RTL modules |
+| 04-Systemverilog | SV constructs and features |
+| 05-Verification | Testbenches, SVA, UVM |
+| 06-Projects | End-to-end projects |
 
 ## Tools Used
 - Verilog HDL / SystemVerilog
