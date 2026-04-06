@@ -1,16 +1,16 @@
-# PIPO — Parallel In Parallel Out Register
+# PIPO - Parallel In Parallel Out Register
 
 A PIPO register loads all input bits simultaneously on the rising clock edge
 and presents all output bits simultaneously. It is essentially N D Flip Flops
-working in parallel — no shifting is involved. It is the simplest form of a
+working in parallel - no shifting is involved. It is the simplest form of a
 register and is used for temporary data storage and pipeline staging.
 
 ## Modules
 
-### pipo_4bit — 4-bit PIPO
+### pipo_4bit - 4-bit PIPO
 Fixed 4-bit parallel register.
 
-### pipo_nbit — N-bit PIPO
+### pipo_nbit - N-bit PIPO
 Parameterized version that works for any bit width.
 Default width is 4.
 
@@ -160,11 +160,17 @@ endmodule
 ## Simulation
 
 ### pipo_4bit
-<!-- paste screenshot here -->
+
+<img width="300" height="450" alt="image" src="https://github.com/user-attachments/assets/35b3d9ff-65d0-4187-825e-03bb55893886" />
+
+<img width="1918" height="565" alt="image" src="https://github.com/user-attachments/assets/1acb2cf2-7d7c-4584-8ab2-34a48a70378f" />
 
 ### pipo_nbit
-<!-- paste screenshot here -->
 
-Simulated using EDA Playground. Parallel loading verified —
+<img width="300" height="450" alt="image" src="https://github.com/user-attachments/assets/59f5daf3-2191-47ea-9bba-bd80b575c215" />
+
+<img width="1919" height="592" alt="image" src="https://github.com/user-attachments/assets/68ecc8bf-eb80-4694-818a-f93dc83ca0fc" />
+
+Simulated using EDA Playground. Parallel loading verified -
 output Q matches input D on every rising clock edge.
 Reset behavior confirmed.
