@@ -5,8 +5,9 @@ module siso_nbit_tb();
   localparam N=4;
   reg clk, reset;
   reg d;
-  reg [(N-1):0] shift_reg;
+  reg [(N-1):0] serial_data;
   wire q;
+  integer i;
   //2. DUT instantiation
   siso_nbit #(.N(N)) dut(.clk(clk),.reset(reset),.d(d),.q(q));
   //3. Clock Generation
@@ -23,10 +24,10 @@ module siso_nbit_tb();
     $display(" Time | D Rst | Q ");
     $display("------|-------|---");
     //4.3 Stimulus
-    serial_data = 1'b1011;
+    serial_data = 'b1011;
     reset=1;d='1; #12; //Reset High
     reset=0; #10;     //Reset low
-    for(i=N-1;i=0;i=i-1) begin
+    for(i=N-1;i>=0;i=i-1) begin
       d=serial_data[i]; #10;         //Input High
     end
     repeat(N) begin
