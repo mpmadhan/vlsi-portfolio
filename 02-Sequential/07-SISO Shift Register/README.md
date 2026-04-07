@@ -22,16 +22,19 @@ Default width is 4. Data shifts in MSB first and exits from MSB after N cycles.
 
 ## How It Works
 ```Internal shift register shifts left on every posedge clk:
-shift_reg <= {shift_reg[N-2:0], d}
-Serial output is the MSB of the internal register:
-q = shift_reg[N-1]
-Example for N=4, serial_data = 1011:
+Reset:   shift_reg = 0000, q = 0
+
+// Shifting in 1011 (MSB first)
 Cycle 1: d=1 → shift_reg = 0001, q = 0
 Cycle 2: d=0 → shift_reg = 0010, q = 0
 Cycle 3: d=1 → shift_reg = 0101, q = 0
-Cycle 4: d=1 → shift_reg = 1011, q = 1 ← first bit appears
-Cycle 5: d=0 → shift_reg = 0110, q = 0
-Cycle 6: d=0 → shift_reg = 1100, q = 1 (wrong, just flushing)
+Cycle 4: d=1 → shift_reg = 1011, q = 1 ← '1' appears (MSB of 1011)
+
+// Now d=0, flushing out remaining bits
+Cycle 5: d=0 → shift_reg = 0110, q = 0 ← '0' appears
+Cycle 6: d=0 → shift_reg = 1100, q = 1 ← '1' appears  
+Cycle 7: d=0 → shift_reg = 1000, q = 1 ← '1' appears
+Cycle 8: d=0 → shift_reg = 0000, q = 0 ← done
 ```
 ## Files
 
