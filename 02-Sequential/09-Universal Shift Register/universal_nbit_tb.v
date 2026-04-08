@@ -32,7 +32,7 @@ module universal_nbit_tb();
     $display(" Time | Rst Sel   D    En Left Right | Q ");
     $display("------|------------------------------|---");
     //4.3 Stimulus
-    sel=2'b00;d='b1011;enable=0;left_in=0;right_in=0;reset=1; //initial values
+    sel=2'b00;d='b1011;enable=0;left_in=0;right_in=0;reset=1; #10; //initial values
     reset=0; enable=1;
     sel=2'b11; #13;               //Loading input into Shift_reg
     sel=2'b01; //Right Shift, Reset low and Enable High
