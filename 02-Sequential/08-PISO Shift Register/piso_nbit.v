@@ -4,7 +4,7 @@ module piso_nbit #(parameter N=4)(
   input [(N-1):0] d,
   output q
 );
-  wire [(N-1):0] shift_reg;
+  reg [(N-1):0] shift_reg;
   always @(posedge clk) begin
     if(reset)
       shift_reg <= 0;
@@ -13,5 +13,5 @@ module piso_nbit #(parameter N=4)(
     else
       shift_reg <= {shift_reg[(N-2):0],1'b0};
   end
-  assign d = shift_reg[N-1];
+  assign q = shift_reg[N-1];
 endmodule
