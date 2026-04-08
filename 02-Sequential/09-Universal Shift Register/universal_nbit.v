@@ -13,6 +13,7 @@ module universal_nbit #(parameter N=4)(
       shift_reg <= 0;
     else if(enable) begin
       case(sel)
+        2'b00: shift_reg <= shift_reg;
         2'b01: shift_reg <= {right_in,shift_reg[(N-1):1]};
         2'b10: shift_reg <= {shift_reg[(N-2):0],left_in};
         2'b11: shift_reg <= d;
