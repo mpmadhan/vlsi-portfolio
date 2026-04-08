@@ -26,6 +26,7 @@ module piso_nbit_tb();
     d='b1011; load=0; reset=1; #10; //Reset High
     load=0; reset=0; #10;           //Reset Low
     load=1; #10;                    //Load High
+    load=0;
     repeat(N) begin                 
       #10;
     end          
