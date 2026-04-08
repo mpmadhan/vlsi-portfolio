@@ -56,6 +56,6 @@ module universal_nbit_tb();
   end
   //5. Observation
   initial begin
-    $monitor("%4t | %b %b %b %b %b %b | %b",$time,reset,d,enable,left_in,right_in,q);
+    $monitor("%4t | %b %b %b %b %b %b %b | %b",$time,reset,sel,d,enable,left_in,right_in,q);
   end
 endmodule
