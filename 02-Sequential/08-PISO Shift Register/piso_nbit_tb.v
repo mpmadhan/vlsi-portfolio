@@ -28,9 +28,9 @@ module piso_nbit_tb();
     load=1; #10;                    //Load High
     repeat(N) begin                 
       #10;
-    end
-    load=1; #10;          
-    d='b0110; load=0; #10;
+    end          
+    d='b0110; load=1; #10;
+    load=0;
     repeat(N) begin
       #10;
     end
