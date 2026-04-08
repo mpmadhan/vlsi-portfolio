@@ -118,23 +118,15 @@ module universal_nbit_tb();
     $display(" Time | Rst Sel   D    En Left Right | Q ");
     $display("------|------------------------------|---");
     //4.3 Stimulus
-    sel=2'b00;d='b1011;enable=0;left_in=0;right_in=0;reset=1; #10;
+    sel=2'b00;d='b1011;enable=0;left_in=0;right_in=0;reset=1; #10; //initial values
     reset=0; enable=1;
     sel=2'b11; #13;               //Loading input into Shift_reg
-    sel=2'b01;                    //Right Shift
-    repeat(N) begin
-      #10;
-    end
-    sel=2'b10;                    //Left Shift
+    sel=2'b01; //Right Shift, Reset low and Enable High
     repeat(N) begin
       #10;
     end
     d='b0110;sel=2'b11;left_in=1;right_in=1; #10;
-    sel=2'b01;                    //Right Shift
-    repeat(N) begin
-      #10;
-    end
-    sel=2'b10;                    //Left Shift
+    sel=2'b10;
     repeat(N) begin
       #10;
     end
@@ -142,8 +134,7 @@ module universal_nbit_tb();
   end
   //5. Observation
   initial begin
-    $monitor("%4t | %b %b %b %b %b %b %b | %b",
-              $time,reset,sel,d,enable,left_in,right_in,q);
+    $monitor("%4t | %b %b %b %b %b %b | %b",$time,reset,sel,d,enable,left_in,right_in,q);
   end
 endmodule
 ```
