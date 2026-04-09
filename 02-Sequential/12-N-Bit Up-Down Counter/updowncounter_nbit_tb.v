@@ -18,7 +18,7 @@ module updowncounter_nbit_tb();
     $dumpfile("updowncounter_nbit_tb.vcd");
     $dumpvars(0,updowncounter_nbit_tb);
     //4.2 Display
-    $display(" Time | Dir   Q   En Rst");
+    $display(" Time | Dir Q En Rst");
     $display("------|-----------------");
     //4.3 Stimulus
     dir=0;reset=1;enable=0; #10; //Up Counter, Initial values 
