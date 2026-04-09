@@ -21,4 +21,22 @@ module updowncounter_nbit_tb();
     $display(" Time | Dir   Q   En Rst");
     $display("------|-----------------");
     //4.3 Stimulus
-    dir=0;
+    dir=0;reset=1;enable=0; #10; //Up Counter, Initial values 
+    reset=0; #10;                //Reset Low
+    enable=1; #10;               //Enable High
+    repeat(N)
+      @(posedge clk);
+    dir=1; #30;                  //Down Counter
+    reset=1; #10;                //Reset High
+    reset=0; #10;                //Reset low
+    repeat(N)
+      @(posedge clk);
+    $finish;
+  end
+  //5. Observation
+  initial begin
+    $monitor("%4t | %b %b %b %b",$time,dir,q,enable,reset);
+  end
+endmodule
+    
+    
