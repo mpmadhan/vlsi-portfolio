@@ -23,7 +23,7 @@ module piso_nbit_tb();
     $display(" Time |   D   Rst | Q ");
     $display("------|-----------|---");
     //4.3 Stimulus
-    d='b1011; load=0; reset=1; #10; //Reset High
+    d='b1011; load=0; reset=1; #13; //Reset High
     load=0; reset=0; #10;           //Reset Low
     load=1; #10;                    //Load High
     load=0;
