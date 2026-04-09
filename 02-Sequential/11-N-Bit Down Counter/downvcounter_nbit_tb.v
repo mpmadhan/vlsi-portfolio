@@ -15,8 +15,8 @@ module downcounter_nbit_tb();
   //4. Waveform & Stimulus
   initial begin
     //4.1 Waveform
-    $dumpfile("upcounter_nbit_tb.vcd");
-    $dumpvars(0,upcounter_nbit_tb);
+    $dumpfile("downcounter_nbit_tb.vcd");
+    $dumpvars(0,downcounter_nbit_tb);
     //4.2 Display
     $display(" Time | Rst En |   Q   ");
     $display("------|--------|-------");
