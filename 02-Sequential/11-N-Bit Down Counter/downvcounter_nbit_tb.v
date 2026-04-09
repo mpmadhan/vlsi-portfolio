@@ -27,7 +27,7 @@ module downcounter_nbit_tb();
     repeat(1<<N)           //2 power N
       @(posedge clk);
     repeat(3)
-      @(posedge clk);      //To check whether it is reverting back to 0000 after all bits high
+      @(posedge clk);
     reset=1; #20;          //Checking reset case
     reset=0; #10;          //Removing reset
     $finish;
