@@ -24,7 +24,7 @@ module upcounter_nbit_tb();
     reset=1;enable=0; #13; //Reset High
     enable=1; #10;         //Enable high but reset high
     reset=0; #10;          //Reset low
-    repeat(2<<N)           //2 power N
+    repeat(1<<N)           //2 power N
       @(posedge clk);
     repeat(3)
       @(posedge clk);      //To check whether it is reverting back to 0000 after all bits high
