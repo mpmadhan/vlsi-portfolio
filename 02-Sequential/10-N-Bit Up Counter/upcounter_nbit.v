@@ -1,7 +1,7 @@
 //RTL Code for N-Bit UP- Counter
 module upcounter_nbit #(parameter N=4)(
   input clk, reset, enable,
-  output [(N-1):0] q
+  output reg [(N-1):0] q
 );
   always @(posedge clk) begin
     if(reset)
