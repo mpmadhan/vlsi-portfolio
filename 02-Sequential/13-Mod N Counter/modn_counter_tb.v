@@ -19,7 +19,7 @@ module modn_counter_tb();
     $dumpfile("modn_counter_tb.vcd");
     $dumpvars(0,modn_counter_tb);
     //4.2 Display
-    $display("Output for the values of M=%b and N=%b",M,N);
+    $display("Output for the values of M=%d and N=%d",M,N);
     $display(" Time | Rst En | Q ");
     $display("------|--------|---");
     //4.3 Stimulus
