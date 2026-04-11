@@ -14,7 +14,7 @@ module tff_async(
 endmodule
 
 //4-Bit Asynchronous Ripple Counter
-module async_ripplecounter #(parameter N=4)(
+module async_ripplecounter_4bit #(parameter N=4)(
   input clk,reset,
   output [(N-1):0] q
 );
