@@ -126,5 +126,5 @@ endmodule
 <img width="1918" height="416" alt="image" src="https://github.com/user-attachments/assets/6391be0d-4abf-49af-9c9d-1a15fd75001f" />
 
 Simulated using EDA Playground. Full 4-bit count cycle verified.
-Ripple behavior observable in waveform - note slight delay between stages.
+Ripple behavior observable in waveform.
 Reset behavior confirmed.
