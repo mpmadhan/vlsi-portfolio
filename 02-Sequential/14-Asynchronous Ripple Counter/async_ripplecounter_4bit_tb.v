@@ -1,5 +1,5 @@
 //Testbench for 4-Bit Asynchronous Ripple Counter
-`timescale 1ns/1ps
+`timescale 1ns/1ns
 module async_ripplecounter_4bit_tb();
   //1. Signal declaration
   localparam N=4;
@@ -23,8 +23,9 @@ module async_ripplecounter_4bit_tb();
     //4.3 Stimulus
     reset=1; @(posedge clk);    //Reset high
     reset=0;                    //Reset low
-    repeat(1<<N)                 //For 2^N clock cycles
+    repeat(1<<N)                //For 2^N clock cycles
       @(posedge clk);
+    #100; @(posedge clk);		//delay
     reset=1; @(posedge clk);    //Reset high
     reset=0; @(posedge clk);    //Reset low
     $finish;
