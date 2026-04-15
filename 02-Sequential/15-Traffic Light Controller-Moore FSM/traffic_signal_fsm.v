@@ -3,7 +3,7 @@
 module traffic_signal_fsm(
   //1. Ports
   input clk,reset,
-  output red,green,yellow
+  output reg red,green,yellow
 );
   //2. State Encoding
   parameter RED = 2'b00;
