@@ -59,6 +59,3 @@ module traffic_signal_fsm(
     yellow = (state == YELLOW);
   end
 endmodule
-        
-  end
-      
