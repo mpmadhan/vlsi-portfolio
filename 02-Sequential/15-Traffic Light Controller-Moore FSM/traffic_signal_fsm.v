@@ -44,7 +44,7 @@ module traffic_signal_fsm(
         end
       end
       YELLOW: begin
-        if(count == 2) begin
+        if(count == 1) begin
           next_state = RED;
           counter_reset = 1;
         end
