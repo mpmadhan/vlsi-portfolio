@@ -21,18 +21,18 @@ module traffic_signal_fsm_tb();
     $display(" Time | Rst | R G Y ");
     $display("------|-----|-------");
     //4.3 Stimulus
-    reset=1; @(posedge clk);
-    reset=0; @(posedge clk);
-    repeat(8)
-      @(posedge clk); //for 8 cycles
-    reset=1; @(posedge clk);
-    reset=0; @(posedge clk);
+    reset=1; #10;
+    reset=0; #10;
+    repeat(5)
+      @(posedge clk); //for 5 cycles
+    reset=1; #10;
+    reset=0; #10;
     repeat(15)
       @(posedge clk); //for 15 cycles
     $finish;
   end
   //5. Observation
-  initial begin
-    $monitor("%4t | %b | %b %b %b ",$time,reset,red,green,yellow);
+  always @(posedge clk) begin
+    $display("%4t | %b | %b %b %b ",$time,reset,red,green,yellow);
   end
 endmodule
