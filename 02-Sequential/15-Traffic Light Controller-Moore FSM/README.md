@@ -154,7 +154,7 @@ module traffic_signal_fsm_tb();
     reset=1; #10;
     reset=0; #10;
     repeat(5)
-      @(posedge clk); //for 8 cycles
+      @(posedge clk); //for 5 cycles
     reset=1; #10;
     reset=0; #10;
     repeat(15)
