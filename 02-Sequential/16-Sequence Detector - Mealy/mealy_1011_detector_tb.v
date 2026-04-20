@@ -1,11 +1,11 @@
 //Testbench for Mealy Sequence Detector - 1011
-`timescale 1ns/1ps
+`timescale 1ns/1ns
 module mealy_1011_detector_tb();
   //1. Signal Declaration
   reg clk,reset,din;
   wire q;
   //2. DUT instantiation
-  mealy_1011_detector dut(.clk(clk),.reset(reset),.din(din),.(q));
+  mealy_1011_detector dut(.clk(clk),.reset(reset),.din(din),.q(q));
   //3. Clock Generation
   initial begin
     clk = 0;
@@ -14,8 +14,8 @@ module mealy_1011_detector_tb();
   //4. Waveform + Stimulus
   initial begin
     //4.1 Waveform
-    $dumpfile("mealy_1011_detector_vcd");
-    $dumpvars(0,mealy_1011+detector);
+    $dumpfile("mealy_1011_detector_tb.vcd");
+    $dumpvars(0,mealy_1011_detector_tb);
     //4.2 Display
     $display(" Time | Rst Din | Q");
     $display("------|---------|---");
