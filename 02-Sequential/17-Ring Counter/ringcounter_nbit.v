@@ -1,7 +1,7 @@
 //RTL Code for N-Bit Ring Counter
 module ringcounter_nbit #(parameter N=4)(
   input clk,reset,
-  output reg q
+  output reg [(N-1):0] q
 );
   always @(posedge clk) begin
     if(reset)
