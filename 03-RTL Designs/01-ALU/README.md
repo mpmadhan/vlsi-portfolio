@@ -1,8 +1,8 @@
-# N-Bit ALU — Arithmetic Logic Unit
+# N-Bit ALU - Arithmetic Logic Unit
 
 A parameterized N-bit ALU in Verilog supporting 16 operations across arithmetic,
 logic, shift, rotate, comparison, and increment/decrement categories. Fully
-combinational — result updates immediately with any change in inputs or select line.
+combinational - result updates immediately with any change in inputs or select line.
 
 ## Modules
 
@@ -44,9 +44,9 @@ Carry and zero flags computed alongside result.
 
 ## How It Works
 
-Purely combinational — `always @(*)` evaluates immediately on any input change.
+Purely combinational - `always @(*)` evaluates immediately on any input change.
 Carry and zero default to `0` at the top of the block to prevent latches.
-Zero flag is computed after the case statement — asserts whenever `result == 0`
+Zero flag is computed after the case statement - asserts whenever `result == 0`
 regardless of operation.
 
 Rotate operations use concatenation:
@@ -67,14 +67,14 @@ Change these two lines to test any input combination across all 16 operations
 without touching the stimulus block.
 
 All 16 operations exercised sequentially with `#10` delay between each.
-No clock needed — purely combinational DUT.
+No clock needed - purely combinational DUT.
 
 ## Files
 
 | File            | Description                                  |
 |-----------------|----------------------------------------------|
-| `alu_nbit.v`    | RTL — 16-operation parameterized ALU         |
-| `alu_nbit_tb.v` | Testbench — all operations, macro-controlled |
+| `alu_nbit.v`    | RTL - 16-operation parameterized ALU         |
+| `alu_nbit_tb.v` | Testbench - all operations, macro-controlled |
 
 ## RTL Code
 
@@ -177,15 +177,15 @@ endmodule
 
 Simulated using EDA Playground. All 16 operations verified with A=1011, B=0110.
 Carry flag verified on addition overflow. Zero flag behavior confirmed.
-Macro-based input control validated — single point of change for all test vectors.
+Macro-based input control validated - single point of change for all test vectors.
 
 ## Key Concepts Demonstrated
 
-- 16-operation ALU — arithmetic, logic, shift, rotate, compare, increment/decrement
-- Parameterized width — scales to any N-bit operand size
-- Latch prevention — carry, zero defaulted to 0 before case statement
-- Rotate via concatenation — no shift operator needed
-- `\`define` macros — single point input control for clean testbench management
+- 16-operation ALU - arithmetic, logic, shift, rotate, compare, increment/decrement
+- Parameterized width - scales to any N-bit operand size
+- Latch prevention - carry, zero defaulted to 0 before case statement
+- Rotate via concatenation - no shift operator needed
+- `\`define` macros - single point input control for clean testbench management
 
 ## Tools
 
