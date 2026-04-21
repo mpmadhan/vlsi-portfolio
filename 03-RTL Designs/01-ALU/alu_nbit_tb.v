@@ -3,8 +3,8 @@
   sel:9: Right Shift, A. Rotate Left, B. Rotate Right, C.A>B, D. A==B, E. A+1, F. A-1. 
   default: A+B*/
 `timescale 1ns/1ns
-`define a 4'1011
-`define b 4'0110
+`define A 4'b1011
+`define B 4'b0110
 module alu_nbit_tb();
   //1. Signal Declaration
   localparam N=4;
@@ -23,7 +23,7 @@ module alu_nbit_tb();
     $display(" Time | A B Sel | Result Carry Zero");
     $display("------|---------|------------------");
     //3.3 Stimulus
-    a=4'b1011; b=4'0110;
+    a=`A; b=`B;
     sel=4'h0; #10;    //Addition
     sel=4'h1; #10;    //Subtraction
     sel=4'h2; #10;    //Bitwise AND
@@ -40,6 +40,7 @@ module alu_nbit_tb();
     sel=4'hd; #10;    //Equal to Comparison
     sel=4'he; #10;    //Increment operator
     sel=4'hf; #10;    //Decrement operator
+    $finish;
   end
   //4. Observation
   initial begin
