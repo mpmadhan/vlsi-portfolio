@@ -21,9 +21,13 @@ module ringcounter_nbit_tb();
     $display(" Time | Rst |  Q ");
     $display("------|-----|-----");
     //4.3 Stimulus
-    reset=1; #10;//initial values
+    reset=1; #12;//initial values
     reset=0;
-    repeat(N+2)  //repeating for N+2 clock cycles 
+    repeat(N-2)  //for checking reset behaviour
+      @(posedge clk);
+    reset=1; #20;
+    reset=0;
+    repeat(N+2)  //repeating for N+2 clock cycles
       @(posedge clk);
     $finish;
   end
