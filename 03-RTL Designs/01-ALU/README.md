@@ -173,7 +173,7 @@ endmodule
 
 ## Simulation
 
-<img width="500" height="550" alt="image" src="https://github.com/user-attachments/assets/1f35897c-32b2-4605-a102-5bd69a56b7ac" />
+<img width="500" height="450" alt="image" src="https://github.com/user-attachments/assets/1f35897c-32b2-4605-a102-5bd69a56b7ac" />
 
 <img width="1919" height="413" alt="image" src="https://github.com/user-attachments/assets/addaed37-54ef-40a0-94a5-ef37aae1d4d4" />
 
