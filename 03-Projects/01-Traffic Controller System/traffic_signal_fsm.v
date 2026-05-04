@@ -1,4 +1,3 @@
-
 //RTL Code ofr Traffic Light Controller Moore FSM
 //RED (5 Cycles) -> GREEN (5 Cycles) -> YELLOW (2 Cycles) -> RED (5 Cycles)
 module traffic_signal_fsm(
@@ -60,4 +59,3 @@ module traffic_signal_fsm(
     yellow = (state == YELLOW);
   end
 endmodule
-```
