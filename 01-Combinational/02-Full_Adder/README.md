@@ -42,6 +42,7 @@ module full_adder(
 );
   assign sum = a^b^cin;
   assign cout = (a&b)|(b&cin)|(cin&a);
+  //assign {cout,sum} = a+b+cin; also works
 endmodule
 ```
   
