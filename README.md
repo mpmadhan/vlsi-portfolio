@@ -1,4 +1,4 @@
-# VLSI Verification Portfolio
+# VLSI Portfolio
 
 A collection of RTL designs and verification environments built as part of my journey toward becoming a Chip Design Verification Engineer.
 
