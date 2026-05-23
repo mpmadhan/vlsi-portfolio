@@ -1,9 +1,9 @@
-# VLSI Portfolio — Madhan M.P
+# VLSI Portfolio - Madhan M.P
 
 RTL Design and Verification portfolio built from the ground up, covering combinational logic, sequential circuits, FSMs, counters, and integrated project-level modules. Each module is independently designed, simulated on EDA Playground (Icarus Verilog + EPWave), and documented with a professional README containing port descriptions, design notes, RTL code, testbench, and waveform screenshots.
 
 **Tools:** Verilog HDL, EDA Playground, Icarus Verilog, EPWave  
-**Author:** Madhan M.P — [github.com/mpmadhan](https://github.com/mpmadhan) | [linkedin.com/in/madhan-mp](https://linkedin.com/in/madhan-mp)
+**Author:** Madhan M.P - [github.com/mpmadhan](https://github.com/mpmadhan) | [linkedin.com/in/madhan-mp](https://linkedin.com/in/madhan-mp)
 
 ---
 
@@ -18,7 +18,7 @@ vlsi-portfolio/
 
 ---
 
-## 01 — Combinational Logic
+## 01 - Combinational Logic
 
 Fundamental combinational building blocks implemented in behavioral, dataflow, and structural modeling styles with named port mapping and parameterized designs.
 
@@ -37,7 +37,7 @@ Fundamental combinational building blocks implemented in behavioral, dataflow, a
 
 ---
 
-## 02 — Sequential Logic
+## 02 - Sequential Logic
 
 Clocked sequential modules with synchronous and asynchronous reset variants, parameterized for flexible bit-width configuration.
 
@@ -57,22 +57,22 @@ Clocked sequential modules with synchronous and asynchronous reset variants, par
 | 12 | N-bit Up-Down Counter | Direction-controlled counter |
 | 13 | Mod-N Counter | Configurable modulus counter |
 | 14 | Asynchronous Ripple Counter | Async ripple counter with reset |
-| 15 | Traffic Light Controller | Moore FSM — 3-state traffic light sequencer |
-| 16 | Sequence Detector | Mealy FSM — overlapping 1011 detector |
+| 15 | Traffic Light Controller | Moore FSM - 3-state traffic light sequencer |
+| 16 | Sequence Detector | Mealy FSM - overlapping 1011 detector |
 | 17 | Ring Counter | N-bit self-circulating shift register |
 | 18 | Johnson Counter | N-bit twisted ring counter |
 
 ---
 
-## 03 — Projects
+## 03 - Projects
 
 Integrated RTL modules combining multiple design concepts into complete, functional systems.
 
 | # | Project | Description |
 |---|---------|-------------|
 | 01 | Traffic Controller System | FSM-based multi-signal traffic controller with pedestrian crossing logic |
-| 02 | N-bit ALU | 16-operation parameterized ALU — arithmetic, bitwise, shift, rotate, compare, increment/decrement — with carry and zero flags, macro-controlled testbench |
-| 03 | UART | Parameterized UART Transmitter and Receiver — FSM-based 8N1 framing, baud rate generator with 16x oversampling, self-checking testbench |
+| 02 | N-bit ALU | 16-operation parameterized ALU - arithmetic, bitwise, shift, rotate, compare, increment/decrement - with carry and zero flags, macro-controlled testbench |
+| 03 | UART | Parameterized UART Transmitter and Receiver - FSM-based 8N1 framing, baud rate generator with 16x oversampling, self-checking testbench |
 
 ---
 
@@ -90,4 +90,4 @@ Integrated RTL modules combining multiple design concepts into complete, functio
 
 ## About
 
-This portfolio was built as part of a structured transition into VLSI RTL Design and Verification, alongside a 6-month industry training program at Silicon Sandbox. Every module was independently designed and coded — no auto-generated RTL.
+This portfolio was built as part of a structured transition into VLSI RTL Design and Verification, alongside a 6-month industry training program at Silicon Sandbox. Every module was independently designed and coded - no auto-generated RTL.
