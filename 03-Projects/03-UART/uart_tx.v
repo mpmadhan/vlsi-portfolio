@@ -7,10 +7,10 @@ module uart_tx(
   output reg tx, busy
 );
   //State encoding
-  parameter IDLE = 2'b00;
-  parameter START = 2'b01;
-  parameter DATA = 2'b10;
-  parameter STOP = 2'b11;
+  localparam IDLE = 2'b00;
+  localparam START = 2'b01;
+  localparam DATA = 2'b10;
+  localparam STOP = 2'b11;
   //Registers
   reg [1:0] state, next_state;
   reg [7:0] data_reg;
@@ -63,6 +63,7 @@ module uart_tx(
         busy = 1'b1;
         tx = 1'b1;
       end
+      default: begin tx=1'b1; busy=1'b0; end
     endcase
   end
 endmodule
