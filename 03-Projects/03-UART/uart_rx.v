@@ -18,25 +18,34 @@ module uart_rx(
   reg [7:0] temp_reg;
   //Sequential logic
   always @(posedge clk) begin
-    if(reset)
+    if(reset) begin
+      state <= IDLE;
+      sample_count <= 0;
+      bit_count <= 0;
+      temp_reg <= 0;
+      data_out <= 0;
+    end
+    else begin
+      state <= next_state;
+    end
   end
   //Combinational Next state logic
   always @(*) begin
     case(state)
       IDLE: next_state = (rx == 0) ? START : IDLE;
-      START: next_state = (rx_en) ? DATA : START;
-      DATA: next_state = (rx_en && bit_count == 128) ? STOP : DATA;
-      STOP: next_state = (rx_en) ? IDLE : STOP;
+      START: next_state = (rx_en && sample_count == 7) ? DATA : START;
+      DATA: next_state = (rx_en && sample_count == 15 && bit_count == 7) ? STOP : DATA;
+      STOP: next_state = (rx_en && sample_count == 15) ? IDLE : STOP;
       default: next_state = IDLE;
     endcase
   end
   //Combinational Output logic
   always @(*) begin
     case(state)
-      IDLE: ready = 1'b1;
-      START: ready = 1'b0;
-      DATA: ready = 1'b0;
-      STOP: ready = 1'b0;
+      IDLE: begin ready = 1'b0; data_out = 0; end
+      START: begin ready = 1'b0; data_out = 0; end
+      DATA: begin ready = 1'b0; data_out = 0; end
+      STOP: begin ready = 1'b1; data_out = temp_reg; end
     endcase
   end
 endmodule
