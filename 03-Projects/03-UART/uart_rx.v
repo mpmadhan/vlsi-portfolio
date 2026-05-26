@@ -13,39 +13,63 @@ module uart_rx(
   localparam STOP = 2'b11;
   //Registers
   reg [1:0] state, next_state;
-  reg [3:0] bit_count;
-  reg [2:0] sample_count;
+  reg [2:0] bit_count;
+  reg [3:0] sample_count;
   reg [7:0] temp_reg;
   //Sequential logic
   always @(posedge clk) begin
     if(reset) begin
       state <= IDLE;
-      sample_count <= 0;
       bit_count <= 0;
+      sample_count <= 0;
       temp_reg <= 0;
-      data_out <= 0;
     end
     else begin
       state <= next_state;
+      case(state)
+        IDLE: begin
+          sample_count <= 0;
+          bit_count <= 0;
+        end
+        START: begin
+          if(rx_en)
+            sample_count <= sample_count + 1'b1;
+        end
+        DATA: begin
+          if(rx_en) begin
+            sample_count <= sample_count + 1'b1;
+            if(sample_count == 7)
+              temp_reg <= {rx,temp_reg[7:1]};
+            if(sample_count == 15) begin
+              bit_count <= bit_count + 1'b1;
+              sample_count <= 0;
+            end
+          end
+        end
+        STOP: begin
+          if(rx_en && sample_count == 15) begin
+            bit_count <= 0;
+            sample_count <= 0;
+          end
+        end
+      endcase
     end
   end
-  //Combinational Next state logic
+  //Combinational next state logic
   always @(*) begin
     case(state)
       IDLE: next_state = (rx == 0) ? START : IDLE;
       START: next_state = (rx_en && sample_count == 7) ? DATA : START;
-      DATA: next_state = (rx_en && sample_count == 15 && bit_count == 7) ? STOP : DATA;
+      DATA: next_state = (rx_en && bit_count ==7 && sample_count == 15) ? STOP : DATA;
       STOP: next_state = (rx_en && sample_count == 15) ? IDLE : STOP;
       default: next_state = IDLE;
     endcase
   end
-  //Combinational Output logic
+  //Combinational output logic
   always @(*) begin
     case(state)
-      IDLE: begin ready = 1'b0; data_out = 0; end
-      START: begin ready = 1'b0; data_out = 0; end
-      DATA: begin ready = 1'b0; data_out = 0; end
-      STOP: begin ready = 1'b1; data_out = temp_reg; end
+      STOP: begin data_out = temp_reg; ready = 1'b1; end;
+      default: begin data_out = 0; ready = 1'b0; end;
     endcase
   end
 endmodule
