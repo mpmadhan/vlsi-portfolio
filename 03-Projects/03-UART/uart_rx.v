@@ -68,8 +68,8 @@ module uart_rx(
   //Combinational output logic
   always @(*) begin
     case(state)
-      STOP: begin data_out = temp_reg; ready = 1'b1; end;
-      default: begin data_out = 0; ready = 1'b0; end;
+      STOP: begin data_out = temp_reg; ready = 1'b1; end
+      default: begin data_out = 0; ready = 1'b0; end
     endcase
   end
 endmodule
