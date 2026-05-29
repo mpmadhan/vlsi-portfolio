@@ -347,14 +347,14 @@ Top-level wrapper that instantiates and connects all three submodules. The trans
 
 ```
                     ┌─────────────────────────────────────────┐
-                    │              uart_top                    │
-                    │                                          │
+                    │              uart_top                   │
+                    │                                         │
  clk ──────────────►│──► baud_rate_generator ──► tx_en ──────►│──► uart_tx ──► tx_internal ──► tx
- reset ─────────────│    (50MHz / 9600)                        │                    │
+ reset ─────────────│    (50MHz / 9600)                       │                    │
  tx_start ──────────│    (50MHz / 153600) ──► rx_en ─────────►│──► uart_rx ◄───────┘
- data_in ───────────│                                          │       │
-                    │                                          │       ├──► ready
-                    │                                          │       └──► data_out
+ data_in ───────────│                                         │       │
+                    │                                         │       ├──► ready
+                    │                                         │       └──► data_out
                     └─────────────────────────────────────────┘
 ```
 
