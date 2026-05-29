@@ -24,20 +24,20 @@ module uart_tx(
     end
     else begin
       state <= next_state;
-      if(state == IDLE && tx_start)
+      if(state == IDLE && tx_start && tx_en)
         data_reg <= data_in;
       if(state == DATA && tx_en) begin
         data_reg <= {1'b0,data_reg[7:1]};
         bit_count <= bit_count + 1'b1;
       end
-      if(state == STOP)
+      if(state == STOP && tx_en)
         bit_count <= 0;
     end
   end
   //Combinational Next state logic block
   always @(*) begin
     case(state)
-      IDLE: next_state = tx_start ? START : IDLE;
+      IDLE: next_state = (tx_start && tx_en) ? START : IDLE;
       START: next_state = tx_en ? DATA : START;
       DATA: next_state = (tx_en && bit_count == 7) ? STOP : DATA; 
       STOP: next_state = tx_en ? IDLE : STOP;
@@ -46,6 +46,8 @@ module uart_tx(
   end
   //Combinational Output logic
   always @(*) begin
+    tx = 1'b1;
+    busy = 1'b1;
     case(state)
       IDLE: begin
         busy = 1'b0;
