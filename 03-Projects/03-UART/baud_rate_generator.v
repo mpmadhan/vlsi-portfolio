@@ -19,9 +19,8 @@ module baud_rate_generator #(
 
     localparam TX_DIV = CLK_FREQ / BAUD_RATE;
     localparam RX_DIV = CLK_FREQ / (BAUD_RATE * 16);
-
-    reg [$clog2(TX_DIV):0] tx_counter;
-    reg [$clog2(RX_DIV):0] rx_counter;
+    reg [$clog2(TX_DIV)-1 :0] tx_counter;
+    reg [$clog2(RX_DIV)-1 :0] rx_counter;
 
     // TX counter: counts up to TX_DIV-1, then resets
     always @(posedge clk) begin
