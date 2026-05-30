@@ -32,8 +32,12 @@ module uart_rx(
           bit_count <= 0;
         end
         START: begin
-          if(rx_en)
-            sample_count <= sample_count + 1'b1;
+          if(rx_en) begin
+            if(sample_count == 7)
+              sample_count <= 0;
+            else 
+              sample_count <= sample_count + 1'b1;
+          end
         end
         DATA: begin
           if(rx_en) begin
@@ -47,9 +51,12 @@ module uart_rx(
           end
         end
         STOP: begin
-          if(rx_en && sample_count == 15) begin
-            bit_count <= 0;
-            sample_count <= 0;
+          if(rx_en) begin
+            sample_count <= sample_count + 1'b1;
+            if(sample_count == 15) begin
+              bit_count <= 0;
+              sample_count <= 0;
+            end
           end
         end
       endcase
@@ -59,7 +66,12 @@ module uart_rx(
   always @(*) begin
     case(state)
       IDLE: next_state = (rx == 0) ? START : IDLE;
-      START: next_state = (rx_en && sample_count == 7) ? DATA : START;
+      START: begin
+        if(rx_en && sample_count == 7)
+          next_state = (rx == 0)? DATA : IDLE;
+        else
+          next_state = START;
+      end
       DATA: next_state = (rx_en && bit_count ==7 && sample_count == 15) ? STOP : DATA;
       STOP: next_state = (rx_en && sample_count == 15) ? IDLE : STOP;
       default: next_state = IDLE;
@@ -67,9 +79,11 @@ module uart_rx(
   end
   //Combinational output logic
   always @(*) begin
+    data_out = temp_reg;
+    ready = 1'b0;
     case(state)
-      STOP: begin data_out = temp_reg; ready = 1'b1; end
-      default: begin data_out = 0; ready = 1'b0; end
+      STOP: begin ready = 1'b1; end
+      default: begin ready = 1'b0; end
     endcase
   end
 endmodule
