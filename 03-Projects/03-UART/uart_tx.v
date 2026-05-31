@@ -1,71 +1,71 @@
 //UART Transmitter Module
 module uart_tx(
-  input clk, reset, tx_start, tx_en,
-  //tx_start is the signal given by user to start trasmit, 
-  //tx_en is the signal received from the baud_rate_generator module
+  input clk, reset,
+  input tx_start, tx_en,
   input [7:0] data_in,
-  output reg tx, busy
+  output reg tx,
+  output reg busy
 );
-  //State encoding
-  localparam IDLE = 2'b00;
-  localparam START = 2'b01;
-  localparam DATA = 2'b10;
-  localparam STOP = 2'b11;
+//State encoding
+  localparam TX_IDLE = 2'b00;
+  localparam TX_START = 2'b01;
+  localparam TX_DATA = 2'b10;
+  localparam TX_STOP = 2'b11;
   //Registers
-  reg [1:0] state, next_state;
-  reg [7:0] data_reg;
-  reg [2:0] bit_count; //counts 8 bits for DATA
+  reg [1:0] state;
+  reg [2:0] bit_pos = 0;
+  reg [7:0] temp_reg;
   //Sequential block
-  always @(posedge clk) begin
+  always @(posedge clk or posedge reset) begin
     if(reset) begin
-      state <= IDLE;
-      data_reg <= 0;
-      bit_count <= 0;
+      state <= TX_IDLE;
+      bit_pos = 0;
+      temp_reg <=0;
+      tx <= 1'b1;
+      busy <= 1'b0;
     end
     else begin
-      state <= next_state;
-      if(state == IDLE && tx_start && tx_en)
-        data_reg <= data_in;
-      if(state == DATA && tx_en) begin
-        data_reg <= {1'b0,data_reg[7:1]};
-        bit_count <= bit_count + 1'b1;
-      end
-      if(state == STOP && tx_en)
-        bit_count <= 0;
+      case(state)
+        TX_IDLE: begin
+          tx <= 1'b1;
+          busy <= 1'b0;
+          if(~tx_start) begin
+            busy <= 1'b1;
+            tx <= 1'b0;
+            temp_reg <= data_in;
+            state <= TX_START;
+          end
+        end
+        TX_START: begin
+          if(tx_en) begin
+            state <= TX_DATA;
+          end
+        end
+        TX_DATA: begin
+          busy <= 1'b1;
+          if(tx_en) begin
+            tx <= temp_reg[bit_pos];
+            bit_pos <= bit_pos + 1'b1;
+            if(bit_pos == 7) begin
+              state <= TX_STOP;
+              bit_pos <= 0;
+            end
+          end
+        end
+        TX_STOP: begin
+          if(tx_en) begin
+            state <= TX_IDLE;
+            tx <= 1'b1;
+            busy <= 1'b0;
+          end
+        end
+        default: begin
+          state <= TX_IDLE;
+          tx = 1'b1;
+          busy <= 1'b1;
+        end
+      endcase
     end
   end
-  //Combinational Next state logic block
-  always @(*) begin
-    case(state)
-      IDLE: next_state = (tx_start && tx_en) ? START : IDLE;
-      START: next_state = tx_en ? DATA : START;
-      DATA: next_state = (tx_en && bit_count == 7) ? STOP : DATA; 
-      STOP: next_state = tx_en ? IDLE : STOP;
-      default: next_state = IDLE;
-    endcase
-  end
-  //Combinational Output logic
-  always @(*) begin
-    tx = 1'b1;
-    busy = 1'b1;
-    case(state)
-      IDLE: begin
-        busy = 1'b0;
-        tx = 1'b1;
-      end
-      START: begin
-        busy = 1'b1;
-        tx = 1'b0;
-      end
-      DATA: begin
-        busy = 1'b1;
-        tx = data_reg[0];
-      end
-      STOP: begin
-        busy = 1'b1;
-        tx = 1'b1;
-      end
-      default: begin tx=1'b1; busy=1'b0; end
-    endcase
-  end
+endmodule
 endmodule
