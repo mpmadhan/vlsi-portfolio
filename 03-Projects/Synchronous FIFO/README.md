@@ -283,6 +283,6 @@ Simulated using EDA Playground with Icarus Verilog / Verilator. Waveforms captur
 - Self-checking testbench with reusable tasks
 
 ## Author
-### Madhan M.P  
+Madhan M.P  
 [![LinkedIn](https://shields.io)](https://linkedin.com/in/madhan-mp)
 [![GitHub](https://shields.io)](https://github.com/mpmadhan)
