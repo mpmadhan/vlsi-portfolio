@@ -41,6 +41,7 @@ module fifo_sync_tb();
       read_en = 1'b1;
       @(posedge clk);
       read_en = 1'b0;
+      @(posedge clk);
 
       if(data_out != expected_val)
         $display("[FAIL] Data mismatch! Expected: %h, Got: %h at time %t",expected_val,data_out,$time);
