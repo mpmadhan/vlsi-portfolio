@@ -281,3 +281,8 @@ Simulated using EDA Playground with Icarus Verilog / Verilator. Waveforms captur
 - Extra-bit pointer technique for full/empty detection
 - Overflow and underflow protection
 - Self-checking testbench with reusable tasks
+
+## Author
+Madhan M.P
+[![GitHub](https://shields.io)](https://github.com/mpmadhan)
+[![LinkedIn](https://shields.io)](https://linkedin.com/in/madhan-mp)
