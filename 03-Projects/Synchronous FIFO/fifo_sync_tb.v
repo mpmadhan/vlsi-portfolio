@@ -27,10 +27,10 @@ module fifo_sync_tb();
   task write_data(input[(WIDTH-1):0] val);
     begin
       @(posedge clk);
-      write_en = 1'b1;
-      data_in = val;
+      write_en <= 1'b1;
+      data_in <= val;
       @(posedge clk);
-      write_en = 1'b0;
+      write_en <= 1'b0;
     end
   endtask
 
@@ -38,15 +38,14 @@ module fifo_sync_tb();
   task read_check_data(input [(WIDTH-1):0] expected_val);
     begin
       @(posedge clk);
-      read_en = 1'b1;
+      read_en <= 1'b1;
       @(posedge clk);
-      read_en = 1'b0;
+      read_en <= 1'b0;
       @(posedge clk);
-
       if(data_out != expected_val)
-        $display("[FAIL] Data mismatch! Expected: %h, Got: %h at time %t",expected_val,data_out,$time);
+        $display("[FAIL] Data mismatch! Expected: %h, Got: %h at time %t, FULL: %h, EMPTY: %h",expected_val,data_out,$time,full,empty);
       else
-        $display("[PASS] Success! Verified data: %h",data_out);
+        $display("[PASS] Success! Verified data: %h, FULL: %h, EMPTY: %h",data_out,full,empty);
     end
   endtask
   
@@ -68,12 +67,17 @@ module fifo_sync_tb();
     write_data(8'hAB);
     write_data(8'hCD);
     write_data(8'hEF);
-    @(posedge clk);
+    
     //Read operation
     $display("---Starting Read Operation---");
     read_check_data(8'hAB);
     read_check_data(8'hCD);
     read_check_data(8'hEF);
+    
+    reset = 1'b1;
+    repeat(2) @(posedge clk);
+    reset = 1'b0;
+    
     //Full flag testing
     $display("---Testing Full & Empty Condition---");
     for(i=0;i<DEPTH;i=i+1)
