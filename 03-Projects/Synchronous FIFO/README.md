@@ -284,5 +284,10 @@ Simulated using EDA Playground with Icarus Verilog / Verilator. Waveforms captur
 
 ## Author
 Madhan M.P  
-[![LinkedIn](https://shields.io)](https://linkedin.com/in/madhan-mp)
-[![GitHub](https://shields.io)](https://github.com/mpmadhan)
+<a href="https://www.linkedin.com/in/madhan-mp" target="_blank">
+  <img src="https://skillicons.dev" alt="LinkedIn" />
+</a>
+<a href="https://github.com/mpmadhan" target="_blank">
+  <img src="https://skillicons.dev" alt="GitHub" />
+</a>
+
