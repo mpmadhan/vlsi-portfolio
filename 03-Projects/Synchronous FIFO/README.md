@@ -161,29 +161,31 @@ module fifo_sync_tb();
     clk = 0;
     forever #5 clk = ~clk;
   end
+
   //4. Tasks
   //Task to write data into FIFO
   task write_data(input[(WIDTH-1):0] val);
     begin
       @(posedge clk);
-      write_en = 1'b1;
-      data_in = val;
+      write_en <= 1'b1;
+      data_in <= val;
       @(posedge clk);
-      write_en = 1'b0;
+      write_en <= 1'b0;
     end
   endtask
+
   //Task to read data and verify whether it match the expectation
   task read_check_data(input [(WIDTH-1):0] expected_val);
     begin
       @(posedge clk);
-      read_en = 1'b1;
+      read_en <= 1'b1;
       @(posedge clk);
-      read_en = 1'b0;
+      read_en <= 1'b0;
       @(posedge clk);
       if(data_out != expected_val)
-        $display("[FAIL] Data mismatch! Expected: %h, Got: %h at time %t",expected_val,data_out,$time);
+        $display("[FAIL] Data mismatch! Expected: %h, Got: %h at time %t, FULL: %h, EMPTY: %h",expected_val,data_out,$time,full,empty);
       else
-        $display("[PASS] Success! Verified data: %h",data_out);
+        $display("[PASS] Success! Verified data: %h, FULL: %h, EMPTY: %h",data_out,full,empty);
     end
   endtask
   
@@ -205,12 +207,17 @@ module fifo_sync_tb();
     write_data(8'hAB);
     write_data(8'hCD);
     write_data(8'hEF);
-    @(posedge clk);
+    
     //Read operation
     $display("---Starting Read Operation---");
     read_check_data(8'hAB);
     read_check_data(8'hCD);
     read_check_data(8'hEF);
+    
+    reset = 1'b1;
+    repeat(2) @(posedge clk);
+    reset = 1'b0;
+    
     //Full flag testing
     $display("---Testing Full & Empty Condition---");
     for(i=0;i<DEPTH;i=i+1)
@@ -258,6 +265,10 @@ endmodule
 ---
 
 ## Simulation
+
+<img width="1026" height="763" alt="image" src="https://github.com/user-attachments/assets/9aa028c6-892d-4b39-9e3a-f0918e8d4905" />
+
+<img width="1919" height="520" alt="image" src="https://github.com/user-attachments/assets/2d18cd41-a12d-41b7-a57f-2e88cfb2dca0" />
 
 Simulated using EDA Playground with Icarus Verilog / Verilator. Waveforms captured in VCD format and verified in GTKWave.
 
