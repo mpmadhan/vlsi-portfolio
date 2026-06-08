@@ -29,17 +29,15 @@ module uart_tx(
         TX_IDLE: begin
           tx <= 1'b1;
           busy <= 1'b0;
-          if(~tx_start) begin
-            busy <= 1'b1;
-            tx <= 1'b0;
+          if(~tx_start && tx_en) begin
+            busy <= 1'b1;	
             temp_reg <= data_in;
             state <= TX_START;
           end
         end
         TX_START: begin
-          if(tx_en) begin
-            state <= TX_DATA;
-          end
+          tx <= 1'b0;
+          state <= TX_DATA;
         end
         TX_DATA: begin
           busy <= 1'b1;
@@ -67,5 +65,4 @@ module uart_tx(
       endcase
     end
   end
-endmodule
 endmodule
