@@ -483,5 +483,6 @@ endmodule
 Simulated on [EDA Playground](https://www.edaplayground.com) using Icarus Verilog.
 
 ## Author
+Madhan M.P
 [![LinkedIn](https://shields.io)](https://linkedin.com/in/madhan-mp)
 [![GitHub](https://shields.io)](https://github.com/mpmadhan)
