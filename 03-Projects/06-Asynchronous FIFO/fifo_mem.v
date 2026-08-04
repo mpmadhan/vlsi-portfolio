@@ -13,7 +13,7 @@ module fifo_mem #(
   input full
 );
   //Memory
-  reg [WIDTH-1:0] fifo [0:DEPTH-1];
+  reg [DATA_LEN-1:0] fifo [0:DEPTH-1];
   
   always @(posedge wclk) begin
     if(w_en & ~full) begin
